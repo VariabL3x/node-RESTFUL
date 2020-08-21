@@ -23,7 +23,7 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 const app = express();
-mongoose.connect(process.env.DB_URL,{useNewUrlParser:true,useUnifiedTopology:true})
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser:true,useUnifiedTopology:true})
 .then(()=>{
     console.log('Database Connected')
     app.listen(process.env.PORT || 3000 ,()=>{
